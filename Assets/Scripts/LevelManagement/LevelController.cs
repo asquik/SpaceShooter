@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UniRx;
 
 [System.Serializable]
 public class StandarDifficultydValues
@@ -11,10 +14,20 @@ public class StandarDifficultydValues
 public class LevelController : MonoBehaviour
 {
     public LevelInfo[] levels;
+    public Button[] playButtons;
     public StandarDifficultydValues standVal;
 
     void Start()
     {
+        foreach (var button in playButtons)
+        {
+            button.OnClickAsObservable()
+                .Subscribe(_ =>
+                {
+                    RunLevel(System.Array.IndexOf(playButtons, button));
+                }).AddTo(this);
+        }
+
         for (int i = 0; i < levels.Length; i++)
         {
             levels[i] = SaveLoadSystem.LoadLevel(levels[i]);
@@ -49,9 +62,14 @@ public class LevelController : MonoBehaviour
         SaveLoadSystem.SaveLevel(_level);
         return _level;
     }
-    // Update is called once per frame
-    void Update()
+
+    public void RunLevel(int levelNumber)
     {
-        
+        Debug.Log(levelNumber);
+        Debug.Log(levels.Length);
+        LoadLevelInfo.boltsLimit = levels[levelNumber].boltsLimit;
+        LoadLevelInfo.spawnRate = levels[levelNumber].spawnRate;
+        LoadLevelInfo.speedDeduction = levels[levelNumber].speedDeduction;
+        SceneManager.LoadScene("Level");
     }
 }
