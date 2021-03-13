@@ -604,6 +604,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4990464092516558797, guid: 1343f698d0369e2409ca6d02ded7ea60,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990464092516558797, guid: 1343f698d0369e2409ca6d02ded7ea60,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990464092516558797, guid: 1343f698d0369e2409ca6d02ded7ea60,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990464092516558797, guid: 1343f698d0369e2409ca6d02ded7ea60,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -858,6 +873,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4990464092516558797, guid: 1343f698d0369e2409ca6d02ded7ea60,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990464092516558797, guid: 1343f698d0369e2409ca6d02ded7ea60,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990464092516558797, guid: 1343f698d0369e2409ca6d02ded7ea60,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990464092516558797, guid: 1343f698d0369e2409ca6d02ded7ea60,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -935,7 +965,7 @@ GameObject:
   - component: {fileID: 2087974585}
   - component: {fileID: 2087974586}
   m_Layer: 5
-  m_Name: ViewController
+  m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -984,10 +1014,10 @@ MonoBehaviour:
   - {fileID: 1071671135}
   - {fileID: 840047023}
   standVal:
-    minSpawnRate: 10
-    maxSpawnRate: 20
-    minBoltsLimit: 10
-    maxBoltsLimit: 15
+    minSpawnRate: 1000
+    maxSpawnRate: 1500
+    minFireRate: 150
+    maxFireRate: 200
     minSpeedDeduction: 0
     maxSpeedDeduction: 10
 --- !u!114 &2087974586
@@ -1082,6 +1112,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4990464092516558797, guid: 1343f698d0369e2409ca6d02ded7ea60,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990464092516558797, guid: 1343f698d0369e2409ca6d02ded7ea60,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990464092516558797, guid: 1343f698d0369e2409ca6d02ded7ea60,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990464092516558797, guid: 1343f698d0369e2409ca6d02ded7ea60,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1118,7 +1163,7 @@ PrefabInstance:
     - target: {fileID: 4990464092516558797, guid: 1343f698d0369e2409ca6d02ded7ea60,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -754
+      value: -684
       objectReference: {fileID: 0}
     - target: {fileID: 4990464092516558797, guid: 1343f698d0369e2409ca6d02ded7ea60,
         type: 3}
@@ -1149,6 +1194,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793961509637354805, guid: 1343f698d0369e2409ca6d02ded7ea60,
+        type: 3}
+      propertyPath: m_Name
+      value: FireRate
       objectReference: {fileID: 0}
     - target: {fileID: 9147771056605020264, guid: 1343f698d0369e2409ca6d02ded7ea60,
         type: 3}

@@ -10,9 +10,12 @@ public class Boundary
 
 public class PlayerMovementController : MonoBehaviour
 {
-    public float speed, tilt;
-    private Rigidbody rb;
     public Boundary boundary;
+    public float speed, tilt;
+    private Rigidbody rb;    
+    private float finalSpeed;
+    [SerializeField]
+    private PlayLevelController controller;
 
     private void Awake()
     {
@@ -23,6 +26,11 @@ public class PlayerMovementController : MonoBehaviour
         
     }
 
+    public void CalculateSpeed(float speedDeduction)
+    {
+        finalSpeed = speed * (1 - speedDeduction / 100.0f);
+    }
+
     void FixedUpdate()
     {
 
@@ -30,7 +38,7 @@ public class PlayerMovementController : MonoBehaviour
         float horInput = Input.GetAxis("Horizontal");
         float verInput = Input.GetAxis("Vertical");
 
-        rb.velocity = new Vector3(horInput, 0, verInput) * speed ;
+        rb.velocity = new Vector3(horInput, 0, verInput) * finalSpeed;
         rb.position = new Vector3
         (
             Mathf.Clamp(rb.position.x, boundary.minX, boundary.maxX),
@@ -41,5 +49,20 @@ public class PlayerMovementController : MonoBehaviour
         rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
 
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            controller.Hit();
+            Destroy(other.gameObject);
+        }
+    }
+
+    public void Stop()
+    {
+        finalSpeed = 0;
+        tilt = 0;
     }
 }

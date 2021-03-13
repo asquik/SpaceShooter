@@ -21,6 +21,7 @@ public static class SaveLoadSystem
         return Application.persistentDataPath + "/" + _levelName + ".info";
     }
 
+
     public static LevelData LoadData(string _levelName)
     {
         string path = PathName(_levelName);
@@ -58,7 +59,7 @@ public static class SaveLoadSystem
             level.isCreated = levelData.isCreated;
             level.isPassed = levelData.isPassed;
             level.spawnRate = levelData.spawnRate;
-            level.boltsLimit = levelData.boltsLimit;
+            level.fireRate = levelData.boltsLimit;
             level.speedDeduction = levelData.speedDeduction;
         }
         return level;

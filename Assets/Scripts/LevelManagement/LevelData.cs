@@ -16,7 +16,7 @@ public class LevelData
         isCreated = level.isCreated;
         isPassed = level.isPassed;
         spawnRate = level.spawnRate;
-        boltsLimit = level.boltsLimit;
+        boltsLimit = level.fireRate;
         speedDeduction = level.speedDeduction;
     }
 }
